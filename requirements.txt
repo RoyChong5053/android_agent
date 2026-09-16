@@ -1,0 +1,4 @@
+adb-shell
+Pillow
+numpy
+opencv-python
