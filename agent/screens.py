@@ -31,6 +31,7 @@ TEMPLATE_SPECS = {
     "cont_menu_title": ("continuous_menu.png",  (140, 62, 330, 108)),
     "run_label":       ("cont_running.png",     (143, 153, 258, 190)),
     "result_title":    ("cont_result.png",      (400, 216, 650, 256)),
+    "arena_title":     ("arena_list.png",       (580, 100, 660, 140)),
 }
 
 # 检测顺序（叠加层优先）。用“强化”按钮识别符文弹窗，比“出售”稳（无价格文本干扰）
@@ -45,6 +46,7 @@ ANCHORS = [
     ("cairos_tab",     "cairos_select",   (345, 210, 580, 310), 0.80),
     ("map_reset",      "battle_map",      (320, 435, 540, 545), 0.80),
     ("lobby_nav",      "lobby",           (700, 585, 1430, 718), 0.75),
+    ("arena_title",    "arena_list",      (500, 80, 750, 160), 0.85),
 ]
 
 # 关闭X模板（按顺序尝试），阈值较高避免正常画面误触发
