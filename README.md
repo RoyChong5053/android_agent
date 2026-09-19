@@ -38,12 +38,10 @@ ADB + OpenCV 的游戏辅助脚本集。**痛点驱动，脚本优先。**
 ## 运行
 
 ```bash
-cd /home/roychong/workspace/mycode/android_agent
-
-# 拉莫遗址刷经验
-python3 -m core.skills.lamo_ruins --rounds 0     # 无限刷
-python3 -m core.skills.lamo_ruins --rounds 20    # 刷 20 局
-python3 -m core.skills.lamo_ruins --dry-run      # 只识别不点击
+# 拉莫遗址刷经验（脚本自动定位项目根，任意目录可跑）
+python3 core/skills/lamo_ruins.py --rounds 0     # 无限刷
+python3 core/skills/lamo_ruins.py --rounds 20    # 刷 20 局
+python3 core/skills/lamo_ruins.py --dry-run      # 只识别不点击
 ```
 
 > 前置：先手动打完第一轮，处理掉一次性 popup（领袖技能 / 探索战斗等）；脚本从胜利结算接管。

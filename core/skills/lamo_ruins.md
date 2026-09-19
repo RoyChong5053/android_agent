@@ -36,10 +36,12 @@
 
 ## 4. 运行
 
+脚本会自动把项目根加入 `sys.path` 并定位模板/日志，**任意目录都能跑**：
+
 ```bash
-python3 -m core.skills.lamo_ruins --rounds 0     # 无限刷
-python3 -m core.skills.lamo_ruins --rounds 20    # 刷 20 局
-python3 -m core.skills.lamo_ruins --dry-run      # 只识别不点击（调试）
+python3 core/skills/lamo_ruins.py --rounds 0     # 无限刷
+python3 core/skills/lamo_ruins.py --rounds 20    # 刷 20 局
+python3 core/skills/lamo_ruins.py --dry-run      # 只识别不点击
 ```
 
 ## 5. 关键坐标（1440x720，实测，勿凭肉眼改）

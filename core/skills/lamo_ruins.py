@@ -7,22 +7,28 @@
 
 兜底识别：是(弹窗) / 确认(掉落) / 战斗开始(遗址详情) / 开始战斗(队伍选择)。
 
-用法：
-    python -m core.skills.lamo_ruins --rounds 0        # 无限刷
-    python -m core.skills.lamo_ruins --rounds 20       # 刷 20 局
-    python -m core.skills.lamo_ruins --dry-run         # 只识别不点击
+用法（任意目录均可，脚本会自动定位项目根）：
+    python3 core/skills/lamo_ruins.py --rounds 0       # 无限刷
+    python3 core/skills/lamo_ruins.py --rounds 20      # 刷 20 局
+    python3 core/skills/lamo_ruins.py --dry-run        # 只识别不点击
 """
 import argparse
 import os
+import sys
 import time
+from pathlib import Path
 
 import cv2
+
+ROOT = Path(__file__).resolve().parents[2]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from core.action.adb_wrapper import tap
 from core.perception.capture import capture_frame
 from core.utils.logger import Journal
 
-TEMPLATE_DIR = os.path.join("data", "templates", "lamo")
+TEMPLATE_DIR = str(ROOT / "data" / "templates" / "lamo")
 
 # 优先级从上到下：弹窗 overlay 必须最先处理
 CHECKS = [
@@ -103,7 +109,7 @@ def main():
     ap.add_argument("--dry-run", action="store_true", help="只识别不点击")
     args = ap.parse_args()
 
-    with Journal() as j:
+    with Journal(root=str(ROOT / "data" / "journal")) as j:
         print(f"journal: {j.path}")
         t0 = time.time()
         done = run(j, rounds=args.rounds, poll=args.poll, dry_run=args.dry_run)
