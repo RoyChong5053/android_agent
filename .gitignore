@@ -4,3 +4,8 @@ __pycache__/
 venv/
 data/journal/
 *.log
+
+# 训练原始数据（体积大，仅本地保留）
+training/yolo/data/raw/
+training/yolo/data/vl_raw/
+training/yolo/data/processed/

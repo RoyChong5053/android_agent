@@ -1,0 +1,11 @@
+path: /home/roychong/workspace/mycode/android_agent/yolo/data
+train: raw/lobby
+val: raw/energy_bar
+test: raw/popup
+
+names:
+  0: lobby
+  1: energy_bar
+  2: popup
+  3: result
+  4: victory
